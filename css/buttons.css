@@ -1,0 +1,38 @@
+.floating-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 50;
+}
+
+.floating-controls button {
+    background: none;
+    border: 2px solid #ff4d4d;
+    border-radius: 20px;
+    width: 45px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff4d4d;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.floating-controls button:hover {
+    background: #ff4d4d;
+    color: white;
+    transform: scale(1.1);
+}
+
+body.light .floating-controls button {
+    color: #cc0000;
+    border-color: #cc0000;
+}
+
+body.light .floating-controls button:hover {
+    background: #cc0000;
+    color: white;
+}

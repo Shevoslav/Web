@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molfar Comics</title>
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/images.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+</head>
+
+<body>
+
+<header>
+    Molfar Comics
+</header>
+
+<div class="container">
+
+    <h2 data-i18n="about"></h2>
+    
+    <div id="content" data-md="../text/molfar"></div>
+
+    <h2 data-i18n="titles"></h2>
+    <div id="library" class="library-grid" data-publisher="molfar"></div>
+
+    <h2>Офіційний сайт</h2>
+    <p>
+        <a href="https://molfar-comics.com" target="_blank">
+            Molfar Comics
+        </a>
+    </p>
+
+    <p><a href="index.html">⬅ Назад на головну</a></p>
+
+</div>
+
+<footer>
+    © 2026 Манґа сайт
+</footer>
+
+<div class="floating-controls">
+    <button id="theme-toggle">☀️</button>
+    <button id="lang-toggle" onclick="toggleLang()">🇬🇧</button>
+</div>
+
+<div id="modal" style="display:none;">
+  <div class="modal-overlay" onclick="closeModal()"></div>
+  <div class="modal-content">
+    <div class="modal-nav">
+      <button id="modal-prev" onclick="prevTitle()">←</button>
+      <img id="modal-cover" src="" alt="">
+      <button id="modal-next" onclick="nextTitle()">→</button>
+    </div>
+    <h3 id="modal-name"></h3>
+    <p id="modal-synopsis-label"></p>
+    <p id="modal-synopsis"></p>
+    <p id="modal-volumes-original"></p>
+    <p id="modal-volumes-translated"></p>
+    <button id="modal-close" onclick="closeModal()"></button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/translations.js"></script>
+<script src="../js/lang.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/library.js"></script>
+<script src="../js/modal.js"></script>
+</body>
+</html>

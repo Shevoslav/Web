@@ -1,0 +1,38 @@
+const translations = {
+  uk: {
+    about: "Про видавництво",
+    features: "Особливості",
+    titles: "Популярні тайтли",
+    official_site: "Офіційний сайт",
+    back: "⬅ Назад на головну",
+    volumes_original: "Томів в оригіналі",
+    volumes_translated: "Перекладено",
+    close: "Закрити",
+    what_is_manga: "Що таке манґа?",
+    publishers: "Видавництва",
+    nasha_idea_desc: "Лідер українського ринку манґи.",
+    molfar_desc: "Манґа та вебтуни українською.",
+    lantsuta_desc: "Нове покоління видавництв.",
+    malopus_desc: "Українське видавництво манґи та графічних новел.",
+    artbooks_desc: "Видавництво артбуків та ілюстрованих видань.",
+    video: "Відео"
+  },
+  en: {
+    about: "About",
+    features: "Features",
+    titles: "Popular titles",
+    official_site: "Official website",
+    back: "⬅ Back to main",
+    volumes_original: "Volumes in original",
+    volumes_translated: "Translated",
+    close: "Close",
+    what_is_manga: "What is manga?",
+    publishers: "Publishers",
+    nasha_idea_desc: "Leader of the Ukrainian manga market.",
+    molfar_desc: "Manga and webtoons in Ukrainian.",
+    lantsuta_desc: "The new generation of publishers.",
+    malopus_desc: "Ukrainian publisher of manga and graphic novels.",
+    artbooks_desc: "Publisher of art books and illustrated editions.",
+    video: "Video"
+  }
+}

@@ -1,0 +1,38 @@
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: #1a1a1a;
+    padding: 10px 20px;
+}
+
+.tab {
+    background: none;
+    border: 2px solid #ff4d4d;
+    color: #ff4d4d;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.tab.active, .tab:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+body.light .tabs {
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body.light .tab {
+    color: #cc0000;
+    border-color: #cc0000;
+}
+
+body.light .tab.active, body.light .tab:hover {
+    background: #cc0000;
+    color: white;
+}

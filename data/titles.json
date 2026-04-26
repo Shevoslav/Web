@@ -1,0 +1,183 @@
+{
+  "nasha-idea": [
+    {
+      "id": "fma",
+      "name": "Fullmetal Alchemist",
+      "cover_uk": "../image/FMA-ua.webp",
+      "synopsis_uk": "Два брати — Едвард та Алфонс Елріки — після невдалого алхімічного ритуалу вирушають на пошуки філософського каменю, щоб повернути втрачені тіла.",
+      "synopsis_en": "Two brothers — Edward and Alphonse Elric — after a failed alchemical ritual, set out to find the Philosopher's Stone to restore their lost bodies.",
+      "volumes_original": 27,
+      "volumes_translated": 8
+    },
+    {
+      "id": "zom100",
+      "name": "Zom100",
+      "cover_uk": "../image/Zom100-ua.webp",
+      "synopsis_uk": "Акіра Тендо під час зомбі-апокаліпсису складає список із 100 речей, які хоче встигнути зробити перед тим, як сам стане зомбі.",
+      "synopsis_en": "Akira Tendo creates a bucket list of 100 things to accomplish during a zombie apocalypse before he turns into a zombie himself.",
+      "volumes_original": 22,
+      "volumes_translated": 6
+    },
+    {
+      "id": "Berserk",
+      "name": "Berserk",
+      "cover_uk": "../image/Berserk-ua.webp",
+      "synopsis_uk": "Ґатс — самотній воїн, який бореться з демонами та власним минулим у жорстокому темному фентезійному світі.",
+      "synopsis_en": "Guts is a lone warrior fighting demons and his tragic past in a brutal dark fantasy world.",
+      "volumes_original": 42,
+      "volumes_translated": 3
+    },
+    {
+      "id": "Vinland",
+      "name": "Vinland saga",
+      "cover_uk": "../image/Vinland-ua.webp",
+      "synopsis_uk": "Торфінн, молодий воїн вікінгів, прагне помститися за смерть батька та знайти легендарну землю Вінланд.",
+      "synopsis_en": "Thorfinn, a young Viking warrior, seeks revenge for his father’s death while searching for the legendary land of Vinland.",
+      "volumes_original": 29,
+      "volumes_translated": 12
+    }
+  ],
+  "molfar": [
+    {
+      "id": "Kill La Kill",
+      "name": "Kill La Kill",
+      "cover_uk": "../image/KillLaKill-ua.webp",
+      "synopsis_uk": "Рюко Матої вступає до академії Хонноджі, щоб знайти вбивцю свого батька та розкрити таємницю надприродного одягу.",
+      "synopsis_en": "Ryuko Matoi enrolls in Honnouji Academy to find her father’s killer and uncover the secret behind powerful living uniforms.",
+      "volumes_original": 3,
+      "volumes_translated": 2
+  },
+  {
+      "id": "Fate/Go",
+      "name": "Fate/Grand Order",
+      "cover_uk": "../image/fate.go-ua.webp",
+      "synopsis_uk": "Ріцука Фудзімару подорожує крізь час, щоб виправити сингулярності та врятувати людство від знищення.",
+      "synopsis_en": "Ritsuka Fujimaru travels through time to resolve singularities and save humanity from extinction.",
+      "volumes_original": 3,
+      "volumes_translated": 2
+  },
+  {
+      "id": "Another",
+      "name": "Another",
+      "cover_uk": "../image/another-ua.webp",
+      "synopsis_uk": "Коїчі Сакакібара переводиться до класу, де починають відбуватися загадкові смертельні події, пов’язані з таємничою ученицею Місакі Мей.",
+      "synopsis_en": "Kōichi Sakakibara transfers to a class where mysterious deadly incidents occur, linked to a secretive student, Misaki Mei.",
+      "volumes_original": 4,
+      "volumes_translated": 4
+  },
+  {
+      "id": "lwa",
+      "name": "Little Witch Academia",
+      "cover_uk": "../image/lwa-ua.webp",
+      "synopsis_uk": "Ацуко «Акако» Кагарі вступає до магічної академії Луна Нова, щоб стати великою відьмою, попри відсутність магічного походження.",
+      "synopsis_en": "Atsuko “Akko” Kagari enrolls at Luna Nova Magical Academy to become a great witch despite having no magical background.",
+      "volumes_original": 4,
+      "volumes_translated": 4
+  }
+  ],
+  "lantsuta": [
+  {
+      "id": "MaoMao",
+      "name": "The Apothecary Diaries",
+      "cover_uk": "../image/The Apothecary Diaries-ua.webp",
+      "synopsis_uk": "Маомао, дівчина з знаннями в медицині, стає служницею в імператорському палаці та розкриває таємниці загадкових хвороб і інтриг гарему.",
+      "synopsis_en": "Maomao, a girl skilled in medicine, becomes a palace servant and uncovers the mysteries of illnesses and court intrigue within the imperial harem.",
+      "volumes_original": 21,
+      "volumes_translated": 12
+  },
+  {
+      "id": "Hanako-kun",
+      "name": "Toilet-bound Hanako-kun",
+      "cover_uk": "../image/Hanako-ua.webp",
+      "synopsis_uk": "Нене Ясіро викликає шкільного духа Ханако-куна та стає його помічницею, розкриваючи надприродні таємниці школи.",
+      "synopsis_en": "Nene Yashiro summons the school spirit Hanako-kun and becomes his assistant, uncovering the supernatural mysteries of the academy.",
+      "volumes_original": 25,
+      "volumes_translated": 6
+  },
+  {
+      "id": "Beyond",
+      "name": "Beyond the clouds",
+      "cover_uk": "../image/Beyond-ua.webp",
+      "synopsis_uk": "Тео, хлопець-механік, зустрічає загадкову дівчину з амнезією і разом із нею відкриває магічний світ за хмарами та таємниці її минулого.",
+      "synopsis_en": "Theo, a young mechanic boy, meets a mysterious amnesiac girl and together they uncover a magical world above the clouds and the secrets of her past.",
+      "volumes_original": 5,
+      "volumes_translated": 5
+  }
+  ],
+  "malopus": [
+  {
+      "id": "Doll",
+      "name": "My Dress-Up Darling",
+      "cover_uk": "../image/Doll-ua.webp",
+      "synopsis_uk": "Вакана Ґоджьо, сором’язливий старшокласник, який мріє стати майстром ляльок хіна, зближується з популярною дівчиною Марін Кітаґавою, що захоплюється косплеєм, коли вони разом створюють костюми і поступово закохуються.",
+      "synopsis_en": "Wakana Gojo, a shy high school boy who dreams of becoming a hina doll craftsman, gets closer to Marin Kitagawa, a popular girl who loves cosplay, as they create costumes together and slowly fall in love.",
+      "volumes_original": 15,
+      "volumes_translated": 9
+  },
+  {
+      "id": "Dungeon",
+      "name": "Delicious in Dungeon",
+      "cover_uk": "../image/Dungeon-ua.webp",
+      "synopsis_uk": "Лаіос і його команда вирушають у небезпечне підземелля, щоб урятувати його сестру, виживаючи завдяки приготуванню та поїданню монстрів і поступово розкриваючи таємниці цього підземелля.",
+      "synopsis_en": "Laios and his party venture into a dangerous dungeon to rescue his sister, surviving by cooking and eating monsters along the way as they uncover the dungeon’s mysteries.",
+      "volumes_original": 14,
+      "volumes_translated": 8
+  },
+  {
+      "id": "Furry",
+      "name": "Beastars",
+      "cover_uk": "../image/Beastars-ua.webp",
+      "synopsis_uk": "Леґоші, сором’язливий сірий вовк зі школи антропоморфних тварин, бореться зі своїми інстинктами та почуттями після зустрічі з карликовою кролицею Хару, поступово розкриваючи напругу між хижаками та травоїдними.",
+      "synopsis_en": "Legoshi, a timid gray wolf student at a school of anthropomorphic animals, struggles with his instincts and emotions after meeting a dwarf rabbit named Haru, while uncovering the tensions between carnivores and herbivores.",
+      "volumes_original": 22,
+      "volumes_translated": 2
+  },
+  {
+      "id": "Ramen",
+      "name": "Uzumaki",
+      "cover_uk": "../image/Uzumaki-ua.webp",
+      "synopsis_uk": "Кіріє Ґошіма та її хлопець Шюїчі Сайто опиняються в проклятому місті Куроузу-чо, де люди дедалі більше одержимі спіралями, що призводить до жахливих надприродних подій.",
+      "synopsis_en": "Kirie Goshima and her boyfriend Shuichi Saito become trapped in the cursed town of Kurouzu-cho, where people are increasingly obsessed with spirals, leading to horrifying supernatural events.",
+      "volumes_original": 1,
+      "volumes_translated": 1
+  }
+  ],
+  "artbooks": [
+  {
+      "id": "AOT",
+      "name": "Attack on Titan",
+      "cover_uk": "../image/AOT-ua.webp",
+      "synopsis_uk": "Ерен Єґер вступає в боротьбу проти гігантських гуманоїдних титанів після знищення його рідного міста, поступово розкриваючи темні таємниці світу, титанів і справжньої історії людства.",
+      "synopsis_en": "Eren Yeager joins the fight against giant humanoid Titans after his hometown is destroyed, uncovering dark secrets about the world, the Titans, and humanity’s true history.",
+      "volumes_original": 34,
+      "volumes_translated": 6
+  },
+  {
+      "id": "Fairy",
+      "name": "Fairy Tail",
+      "cover_uk": "../image/Fairy-ua.webp",
+      "synopsis_uk": "Нацу Драгніл, маг-вбивця драконів вогню з гільдії Fairy Tail, разом із Люсі Гартфілією та іншими друзями вирушає у магічні пригоди світом, протистоячи могутнім ворогам і розкриваючи приховані таємниці.",
+      "synopsis_en": "Natsu Dragneel, a fire dragon slayer wizard from the Fairy Tail guild, teams up with Lucy Heartfilia and other friends on magical adventures across the world while facing powerful enemies and uncovering hidden mysteries.",
+      "volumes_original": 63,
+      "volumes_translated": 3
+  },
+  {
+      "id": "Ghost",
+      "name": "Ghost in the Shell",
+      "cover_uk": "../image/Ghost-ua.webp",
+      "synopsis_uk": "Майор Мотоко Кусанагі, кіборг-офіцер безпеки у футуристичному кібернетичному суспільстві, очолює «Секцію 9», що полює на кіберзлочинців і стикається з питаннями ідентичності, свідомості та того, що означає бути людиною.",
+      "synopsis_en": "Major Motoko Kusanagi, a cyborg security officer in a future cybernetic society, leads Section 9 as they hunt cybercriminals and confront questions about identity, consciousness, and what it means to be human.",
+      "volumes_original": 3,
+      "volumes_translated": 1
+  },
+  {
+      "id": "April",
+      "name": "Your Lie in April",
+      "cover_uk": "../image/lie-ua.webp",
+      "synopsis_uk": "Коусей Аріма, колишній піаніст-вундеркінд, який втратив здатність чути звук власної гри після смерті матері, знову знаходить любов до музики після зустрічі з вільнодушною скрипалькою Каорі Міядзоно, яка назавжди змінює його життя.",
+      "synopsis_en": "Kousei Arima, a former piano prodigy who lost his ability to hear the sound of his own playing after his mother’s death, regains his passion for music after meeting the free-spirited violinist Kaori Miyazono, who changes his life forever.",
+      "volumes_original": 11,
+      "volumes_translated": 3
+  }
+  ]
+}
