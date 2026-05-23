@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Манґа в Україні</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/images.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/tabs.css">
+</head>
+
+<body>
+
+<header>
+    Манґа в Україні
+</header>
+
+<div class="tabs">
+    <button class="tab active" onclick="showTab('manga', event)" data-i18n="what_is_manga"></button>
+    <button class="tab" onclick="showTab('publishers', event)" data-i18n="publishers"></button>
+    <button class="tab" onclick="showTab('video', event)" data-i18n="video"></button>
+    <button class="tab" onclick="showTab('about', event)" data-i18n="about_us_tab"></button>
+</div>
+
+<div class="container">
+
+    <div id="tab-manga">
+        <div class="content-wrapper">
+            <div id="content" data-md="text/Index"></div>
+        </div>
+    </div>
+
+    <div id="tab-publishers" style="display:none;">
+        <a href="html/nasha-idea.html" class="card-link">
+            <div class="card">
+                <img src="image/logos/nasha-idea.webp" alt="Nasha Idea" class="publisher-logo">
+                <div>
+                    <h3>Nasha Idea</h3>
+                    <p data-i18n="nasha_idea_desc"></p>
+                </div>
+            </div>
+        </a>
+
+        <a href="html/molfar.html" class="card-link">
+            <div class="card">
+                <img src="image/logos/molfar.webp" alt="Molfar Comics" class="publisher-logo">
+                <div>
+                    <h3>Molfar Comics</h3>
+                    <p data-i18n="molfar_desc"></p>
+                </div>
+            </div>
+        </a>
+
+        <a href="html/lantsuta.html" class="card-link">
+            <div class="card">
+                <img src="image/logos/lantsuta.webp" alt="Lantsuta Publisher" class="publisher-logo">
+                <div>
+                    <h3>Lantsuta Publisher</h3>
+                    <p data-i18n="lantsuta_desc"></p>
+                </div>
+            </div>
+        </a>
+
+        <a href="html/malopus.html" class="card-link">
+            <div class="card">
+                <img src="image/logos/mal'opus.webp" alt="Mal'opus" class="publisher-logo">
+                <div>
+                    <h3>Mal'opus</h3>
+                    <p data-i18n="malopus_desc"></p>
+                </div>
+            </div>
+        </a>
+
+        <a href="html/artbooks.html" class="card-link">
+            <div class="card">
+                <img src="image/logos/artbooks.webp" alt="ArtBooks" class="publisher-logo">
+                <div>
+                    <h3>ArtBooks</h3>
+                    <p data-i18n="artbooks_desc"></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div id="tab-video" style="display:none;"></div>
+
+    <div id="tab-about" style="display:none;">
+        <div class="about-wrapper">
+            <div class="about-photo-block">
+                <img src="image/about-photo.webp" alt="Фото команди" class="about-photo">
+            </div>
+            <div class="content-wrapper">
+                <div id="content-about" data-md="text/about"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Манґа сайт
+</footer>
+
+<div class="floating-controls">
+    <button id="theme-toggle">☀️</button>
+    <button id="lang-toggle" onclick="toggleLang()"></button>
+    <div class="font-controls">
+        <button data-size="s">S</button>
+        <button data-size="m">M</button>
+        <button data-size="l">L</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/translations.js"></script>
+<script src="js/lang.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/font.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/video.js"></script>
+</body>
+</html>

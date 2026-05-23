@@ -10,12 +10,12 @@ function openModal(publisher, index) {
 
 function renderModal() {
   const title = titlesData[currentPublisher][currentIndex];
-  const cover = title.cover_uk;
+  const name = currentLang === "uk" ? title.name_uk : title.name_en;
   const synopsis = currentLang === "uk" ? title.synopsis_uk : title.synopsis_en;
   const t = translations[currentLang];
 
-  document.getElementById("modal-cover").src = cover;
-  document.getElementById("modal-name").textContent = title.name;
+  document.getElementById("modal-cover").src = title.cover_uk;
+  document.getElementById("modal-name").textContent = name;
   document.getElementById("modal-synopsis-label").textContent = t.synopsis;
   document.getElementById("modal-synopsis").textContent = synopsis;
   document.getElementById("modal-volumes-original").textContent = `${t.volumes_original}: ${title.volumes_original}`;

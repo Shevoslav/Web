@@ -2,8 +2,11 @@
     display: flex;
     justify-content: center;
     gap: 10px;
-    background: #1a1a1a;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 10px 20px;
+    position: relative;
 }
 
 .tab {
@@ -15,6 +18,7 @@
     cursor: pointer;
     font-size: 15px;
     transition: 0.2s;
+    white-space: nowrap;
 }
 
 .tab.active, .tab:hover {
@@ -22,8 +26,63 @@
     color: white;
 }
 
+.tabs-hamburger {
+    display: none;
+    background: none;
+    border: 2px solid #ff4d4d;
+    color: #ff4d4d;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    transition: 0.2s;
+}
+
+.tabs-hamburger:hover,
+.tabs-hamburger.open {
+    background: #ff4d4d;
+    color: white;
+}
+
+.tabs-dropdown {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 20px 14px;
+    z-index: 200;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.tabs-dropdown.open {
+    display: flex;
+}
+
+.tabs-dropdown .tab {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.tabs.narrow .tab {
+    display: none;
+}
+
+.tabs.narrow .tabs-hamburger {
+    display: block;
+}
+
 body.light .tabs {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -35,4 +94,22 @@ body.light .tab {
 body.light .tab.active, body.light .tab:hover {
     background: #cc0000;
     color: white;
+}
+
+body.light .tabs-hamburger {
+    color: #cc0000;
+    border-color: #cc0000;
+}
+
+body.light .tabs-hamburger:hover,
+body.light .tabs-hamburger.open {
+    background: #cc0000;
+    color: white;
+}
+
+body.light .tabs-dropdown {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }

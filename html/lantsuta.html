@@ -13,26 +13,30 @@
 <body>
 
 <header>
+    <a href="../index.html#publishers" class="header-back-btn">←</a>
     Lantsuta Publisher
 </header>
 
 <div class="container">
-
     <h2 data-i18n="about"></h2>
    
-    <div id="content" data-md="../text/lantsuta"></div>
+    <div class="content-wrapper"><div id="content" data-md="../text/lantsuta"></div></div>
 
     <h2 data-i18n="titles"></h2>
     <div id="library" class="library-grid" data-publisher="lantsuta"></div>
 
     <h2 data-i18n="official_site"></h2>
-    <p>
-        <a href="https://lantsuta-publishing.com" target="_blank">
-            Lantsuta Publisher
-        </a>
-    </p>
+<a href="https://lantsuta-publishing.com" target="_blank" class="card-link">
+    <div class="card">
+        <img src="../image/logos/lantsuta.webp" alt="Lantsuta Publisher" class="publisher-logo">
+        <div>
+            <h3>Lantsuta Publisher</h3>
+            <p>lantsuta-publishing.com ↗</p>
+        </div>
+    </div>
+</a>
 
-    <p><a href="index.html" data-i18n="back"></a></p>
+    <p><a href="../index.html#publishers" class="back-btn" data-i18n="back"></a></p>
 
 </div>
 
@@ -43,6 +47,12 @@
 <div class="floating-controls">
     <button id="theme-toggle">☀️</button>
     <button id="lang-toggle" onclick="toggleLang()">🇬🇧</button>
+    <div class="font-controls">
+        <button data-size="s">S</button>
+        <button data-size="m">M</button>
+        <button data-size="l">L</button>
+    </div>
+
 </div>
 
 <div id="modal" style="display:none;">
@@ -67,6 +77,7 @@
 <script src="../js/translations.js"></script>
 <script src="../js/lang.js"></script>
 <script src="../js/theme.js"></script>
+<script src="../js/font.js"></script>
 <script src="../js/library.js"></script>
 <script src="../js/modal.js"></script>
 </body>

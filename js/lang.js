@@ -9,28 +9,23 @@ function applyTranslations() {
   });
 }
 
-function loadContent() {
-  const el = document.getElementById("content");
+function loadMarkdown(el) {
   if (!el) return;
 
-  // Спершу перевіряємо чи є вбудований контент у markdownContent (з data.js)
   const base = el.dataset.md;
   if (typeof markdownContent !== "undefined") {
-    // Витягуємо ключ: "../text/nasha-idea" → "nasha-idea"
     const key = base.replace(/^.*\//, "");
     const langKey = currentLang === "uk" ? key : key + ".en";
     if (markdownContent[langKey]) {
       el.innerHTML = marked.parse(markdownContent[langKey]);
       return;
     }
-    // Fallback на uk якщо en не знайдено
     if (markdownContent[key]) {
       el.innerHTML = marked.parse(markdownContent[key]);
       return;
     }
   }
 
-  // Якщо вбудованого контенту немає — пробуємо fetch
   const suffix = currentLang === "uk" ? "" : `.${currentLang}`;
   const url = `${base}${suffix}.md`;
 
@@ -43,9 +38,13 @@ function loadContent() {
       el.innerHTML = marked.parse(data);
     })
     .catch(() => {
-      // file:// або файл не знайдено — показуємо порожній блок без помилки
       el.innerHTML = "";
     });
+}
+
+function loadContent() {
+  loadMarkdown(document.getElementById("content"));
+  loadMarkdown(document.getElementById("content-about"));
 }
 
 function toggleLang() {
@@ -53,6 +52,7 @@ function toggleLang() {
   localStorage.setItem("lang", currentLang);
   applyTranslations();
   loadContent();
+  if (typeof renderLibrary === "function") renderLibrary();
 
   const btn = document.getElementById("lang-toggle");
   if (btn) btn.textContent = currentLang === "uk" ? "EN" : "UA";

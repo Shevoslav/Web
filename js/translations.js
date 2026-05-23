@@ -15,7 +15,9 @@ const translations = {
     lantsuta_desc: "Нове покоління видавництв.",
     malopus_desc: "Українське видавництво манґи та графічних новел.",
     artbooks_desc: "Видавництво артбуків та ілюстрованих видань.",
-    video: "Відео"
+    video: "Відео",
+    about_us_tab: "Про нас",
+    synopsis: "Синопсис"
   },
   en: {
     about: "About",
@@ -33,6 +35,8 @@ const translations = {
     lantsuta_desc: "The new generation of publishers.",
     malopus_desc: "Ukrainian publisher of manga and graphic novels.",
     artbooks_desc: "Publisher of art books and illustrated editions.",
-    video: "Video"
+    video: "Video",
+    about_us_tab: "About us",
+    synopsis: "Synopsis"
   }
 }
