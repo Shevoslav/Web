@@ -30,6 +30,16 @@ function toggleDropdown(e) {
     hamburger.classList.toggle("open", isOpen);
 }
 
+function syncDropdownText() {
+    const dropdown = document.getElementById("tabs-dropdown");
+    if (!dropdown) return;
+    const originalTabs = Array.from(document.querySelectorAll(".tabs > .tab"));
+    const clones = Array.from(dropdown.querySelectorAll(".tab"));
+    originalTabs.forEach((btn, i) => {
+        if (clones[i]) clones[i].textContent = btn.textContent;
+    });
+}
+
 function checkOverflow(tabsBar) {
     tabsBar.classList.remove("narrow");
 
@@ -66,23 +76,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdown = document.createElement("div");
     dropdown.id = "tabs-dropdown";
     dropdown.className = "tabs-dropdown";
-
-    // Зупиняємо поширення кліку з dropdown щоб не закривався одразу
     dropdown.addEventListener("click", e => e.stopPropagation());
 
     tabsBar.querySelectorAll(".tab").forEach(btn => {
         const clone = btn.cloneNode(true);
+        const tabName = btn.dataset.i18n === "what_is_manga" ? "manga"
+                      : btn.dataset.i18n === "publishers" ? "publishers"
+                      : btn.dataset.i18n === "video" ? "video"
+                      : "about";
         clone.addEventListener("click", () => {
-            const name = btn.dataset.i18n === "what_is_manga" ? "manga"
-                       : btn.dataset.i18n === "publishers" ? "publishers"
-                       : btn.dataset.i18n === "video" ? "video"
-                       : "about";
-            showTab(name, { target: clone });
+            showTab(tabName, { target: clone });
         });
         dropdown.appendChild(clone);
     });
 
     tabsBar.appendChild(dropdown);
+
+    // Синхронізуємо текст після того як lang.js переклав
+    setTimeout(syncDropdownText, 100);
+
+    // Також синхронізуємо при кожній зміні мови
+    const origToggleLang = window.toggleLang;
+    if (typeof origToggleLang === "function") {
+        window.toggleLang = function() {
+            origToggleLang();
+            setTimeout(syncDropdownText, 50);
+        };
+    }
 
     document.addEventListener("click", () => closeDropdown());
 
