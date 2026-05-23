@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!container) return;
 
     let current = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     const wrapper = document.createElement("div");
     wrapper.className = "video-wrapper";
@@ -27,15 +29,31 @@ document.addEventListener("DOMContentLoaded", () => {
         div.onclick = () => window.open(`https://www.youtube.com/watch?v=${video.id}`, "_blank");
     }
 
-    btnPrev.onclick = () => {
+    function prev() {
         current = (current - 1 + videosData.length) % videosData.length;
         render();
-    };
+    }
 
-    btnNext.onclick = () => {
+    function next() {
         current = (current + 1) % videosData.length;
         render();
-    };
+    }
+
+    btnPrev.onclick = prev;
+    btnNext.onclick = next;
+
+    // Свайп
+    div.addEventListener("touchstart", e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    div.addEventListener("touchend", e => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+            diff > 0 ? next() : prev();
+        }
+    }, { passive: true });
 
     wrapper.appendChild(btnPrev);
     wrapper.appendChild(div);

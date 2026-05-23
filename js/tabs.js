@@ -29,7 +29,7 @@ function toggleDropdown(e) {
     // Позиціонуємо dropdown під tabsBar
     const tabsBar = document.querySelector(".tabs");
     const rect = tabsBar.getBoundingClientRect();
-    dropdown.style.top = (rect.bottom + window.scrollY) + "px";
+    dropdown.style.top = rect.bottom + "px";
     dropdown.style.left = rect.left + "px";
     dropdown.style.width = rect.width + "px";
     const isOpen = dropdown.classList.toggle("open");
@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.addEventListener("click", () => closeDropdown());
+    window.addEventListener("scroll", () => closeDropdown(), { passive: true });
 
     const observer = new ResizeObserver(() => checkOverflow(tabsBar));
     observer.observe(tabsBar);
