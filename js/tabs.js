@@ -30,14 +30,17 @@ function toggleDropdown() {
 }
 
 function checkOverflow(tabsBar) {
+    // Тимчасово знімаємо narrow щоб отримати реальні розміри
     tabsBar.classList.remove("narrow");
 
     const tabs = Array.from(tabsBar.querySelectorAll(".tab"));
     const hamburger = document.getElementById("tabs-hamburger");
 
+    // Показуємо таби тимчасово щоб виміряти
+    tabs.forEach(t => t.style.display = "");
+
     const gap = 10;
     const paddingH = 40;
-    const hamburgerW = hamburger ? hamburger.offsetWidth + gap : 0;
 
     let totalW = paddingH;
     tabs.forEach(t => { totalW += t.offsetWidth + gap; });
@@ -46,6 +49,12 @@ function checkOverflow(tabsBar) {
     const needsCollapse = totalW > containerW;
 
     tabsBar.classList.toggle("narrow", needsCollapse);
+
+    // Якщо narrow — CSS сам сховає таби через .tabs.narrow .tab { display:none }
+    // Якщо не narrow — прибираємо inline style
+    if (!needsCollapse) {
+        tabs.forEach(t => t.style.display = "");
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -84,9 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new ResizeObserver(() => {
         checkOverflow(tabsBar);
     });
-    observer.observe(document.body);
+    observer.observe(tabsBar);
 
-    requestAnimationFrame(() => checkOverflow(tabsBar));
+    // Перевіряємо після повного завантаження
+    requestAnimationFrame(() => {
+        setTimeout(() => checkOverflow(tabsBar), 50);
+    });
 
     if (window.location.hash === "#publishers") {
         showTab("publishers", null);
