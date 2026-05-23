@@ -71,7 +71,7 @@
     display: block;
 }
 
-.tabs.narrow .tab {
+.tabs.narrow > .tab {
     display: none;
 }
 
