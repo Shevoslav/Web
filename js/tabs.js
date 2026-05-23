@@ -26,6 +26,12 @@ function toggleDropdown(e) {
     const dropdown = document.getElementById("tabs-dropdown");
     const hamburger = document.getElementById("tabs-hamburger");
     if (!dropdown) return;
+    // Позиціонуємо dropdown під tabsBar
+    const tabsBar = document.querySelector(".tabs");
+    const rect = tabsBar.getBoundingClientRect();
+    dropdown.style.top = (rect.bottom + window.scrollY) + "px";
+    dropdown.style.left = rect.left + "px";
+    dropdown.style.width = rect.width + "px";
     const isOpen = dropdown.classList.toggle("open");
     hamburger.classList.toggle("open", isOpen);
 }
@@ -56,10 +62,6 @@ function checkOverflow(tabsBar) {
     const needsCollapse = totalW > containerW;
 
     tabsBar.classList.toggle("narrow", needsCollapse);
-
-    if (!needsCollapse) {
-        tabs.forEach(t => t.style.display = "");
-    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.addEventListener("click", toggleDropdown);
     tabsBar.appendChild(hamburger);
 
+    // Dropdown додаємо в body а не в .tabs
     const dropdown = document.createElement("div");
     dropdown.id = "tabs-dropdown";
     dropdown.className = "tabs-dropdown";
@@ -90,12 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.appendChild(clone);
     });
 
-    tabsBar.appendChild(dropdown);
+    document.body.appendChild(dropdown);
 
-    // Синхронізуємо текст після того як lang.js переклав
     setTimeout(syncDropdownText, 100);
 
-    // Також синхронізуємо при кожній зміні мови
     const origToggleLang = window.toggleLang;
     if (typeof origToggleLang === "function") {
         window.toggleLang = function() {
