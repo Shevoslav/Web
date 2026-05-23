@@ -21,7 +21,8 @@ function closeDropdown() {
     if (hamburger) hamburger.classList.remove("open");
 }
 
-function toggleDropdown() {
+function toggleDropdown(e) {
+    e.stopPropagation();
     const dropdown = document.getElementById("tabs-dropdown");
     const hamburger = document.getElementById("tabs-hamburger");
     if (!dropdown) return;
@@ -30,13 +31,9 @@ function toggleDropdown() {
 }
 
 function checkOverflow(tabsBar) {
-    // Тимчасово знімаємо narrow щоб отримати реальні розміри
     tabsBar.classList.remove("narrow");
 
     const tabs = Array.from(tabsBar.querySelectorAll(".tab"));
-    const hamburger = document.getElementById("tabs-hamburger");
-
-    // Показуємо таби тимчасово щоб виміряти
     tabs.forEach(t => t.style.display = "");
 
     const gap = 10;
@@ -50,8 +47,6 @@ function checkOverflow(tabsBar) {
 
     tabsBar.classList.toggle("narrow", needsCollapse);
 
-    // Якщо narrow — CSS сам сховає таби через .tabs.narrow .tab { display:none }
-    // Якщо не narrow — прибираємо inline style
     if (!needsCollapse) {
         tabs.forEach(t => t.style.display = "");
     }
@@ -65,37 +60,35 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.id = "tabs-hamburger";
     hamburger.className = "tabs-hamburger";
     hamburger.textContent = "☰";
-    hamburger.onclick = toggleDropdown;
+    hamburger.addEventListener("click", toggleDropdown);
     tabsBar.appendChild(hamburger);
 
     const dropdown = document.createElement("div");
     dropdown.id = "tabs-dropdown";
     dropdown.className = "tabs-dropdown";
 
+    // Зупиняємо поширення кліку з dropdown щоб не закривався одразу
+    dropdown.addEventListener("click", e => e.stopPropagation());
+
     tabsBar.querySelectorAll(".tab").forEach(btn => {
         const clone = btn.cloneNode(true);
-        clone.onclick = () => {
+        clone.addEventListener("click", () => {
             const name = btn.dataset.i18n === "what_is_manga" ? "manga"
                        : btn.dataset.i18n === "publishers" ? "publishers"
                        : btn.dataset.i18n === "video" ? "video"
                        : "about";
             showTab(name, { target: clone });
-        };
+        });
         dropdown.appendChild(clone);
     });
 
     tabsBar.appendChild(dropdown);
 
-    document.addEventListener("click", (e) => {
-        if (!tabsBar.contains(e.target)) closeDropdown();
-    });
+    document.addEventListener("click", () => closeDropdown());
 
-    const observer = new ResizeObserver(() => {
-        checkOverflow(tabsBar);
-    });
+    const observer = new ResizeObserver(() => checkOverflow(tabsBar));
     observer.observe(tabsBar);
 
-    // Перевіряємо після повного завантаження
     requestAnimationFrame(() => {
         setTimeout(() => checkOverflow(tabsBar), 50);
     });
