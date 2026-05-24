@@ -216,7 +216,6 @@ body.light .video-nav {
         padding: 8px;
     }
 }
-
 @media (max-width: 600px) {
     .library-slider {
         flex-direction: column;
@@ -224,8 +223,8 @@ body.light .video-nav {
     .library-track {
         justify-content: center;
     }
-    .library-nav {
-        align-self: auto;
+    .library-slider > .library-nav {
+        display: none;
     }
     .library-controls-mobile {
         display: flex;
