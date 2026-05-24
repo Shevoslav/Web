@@ -32,7 +32,9 @@ body.light .header-back-btn:hover {
 .floating-controls {
     position: fixed;
     bottom: 20px;
-    right: 8px;
+    right: 0;
+    border-radius: 20px 0 0 20px;
+    border-right: none;
     display: flex;
     flex-direction: column;
     align-items: center;
