@@ -1,342 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700&display=swap');
-
-/* Font size variables */
-:root {
-    --font-size-base: 16px;
-    --font-body: 'Nunito', Arial, sans-serif;
-    --font-header: 'Bangers', Arial, sans-serif;
-}
-body.font-s { --font-size-base: 13px; }
-body.font-m { --font-size-base: 16px; }
-body.font-l { --font-size-base: 20px; }
-
-html, body {
-    margin: 0;
-    min-width: 0 !important;
-    overflow-x: hidden;
-}
-
-body {
-    font-family: var(--font-body);
-    background: transparent;
-    color: #f1f1f1;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-size: var(--font-size-base);
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: url('../image/bg-dark.webp') center/cover;
-    z-index: -1;
-}
-
-body.light {
-    color: #111;
-}
-
-body.light::before {
-    background: url('../image/bg-light.webp') center/cover;
-}
-
 header {
-    font-family: var(--font-header);
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 20px;
-    text-align: center;
-    color: #ff4d4d;
-    font-size: 28px;
-    min-width: 0;
-    word-break: break-word;
-}
-
-footer {
-    text-align: center;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    font-size: 20px;
-    min-width: 0;
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    padding-bottom: 80px;
-    flex: 1;
-    min-width: 0;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-@media (max-width: 480px) {
-    .container { padding: 12px; padding-bottom: 80px; }
-    header { font-size: 20px; padding: 12px; }
-}
-
-.card {
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
-    transition: 0.3s;
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 15px;
-    min-width: 0;
+    justify-content: center;
+    gap: 10px;
 }
 
-.card:hover {
-    transform: scale(1.03);
-}
-
-.card-link {
+.header-back-btn {
+    font-size: 24px;
     text-decoration: none;
-    color: inherit;
-    display: block;
-    min-width: 0;
-}
-
-h2 {
-    display: block;
     color: #ff4d4d;
-    border-radius: 10px;
-    padding: 6px 14px;
-    margin: 20px 0 5px;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-a {
-    color: #ff4d4d;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.publisher-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+    line-height: 1;
+    transition: transform 0.2s;
     flex-shrink: 0;
 }
 
-body.light header {
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.header-back-btn:hover {
+    color: #ff4d4d;
+    text-decoration: none;
+    transform: translateX(-4px);
 }
 
-body.light footer {
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-}
-
-body.light .card {
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-body.light h2 {
-    color: #cc0000;
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-body.light a {
+body.light .header-back-btn {
     color: #cc0000;
 }
 
-/* Content block */
-.content-wrapper {
-    position: relative;
+body.light .header-back-btn:hover {
+    color: #cc0000;
+}
+
+.floating-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    z-index: 50;
+    pointer-events: auto;
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-radius: 10px;
-    min-width: 0;
+    border: 2px solid #ff4d4d;
+    border-radius: 20px;
+    padding: 4px;
 }
 
-#content {
-    font-size: var(--font-size-base);
-    line-height: 1.6;
-    padding: 20px 20px 15px;
-    min-width: 0;
-    word-break: break-word;
-}
-
-/* Font size buttons — global, inside .floating-controls */
-.font-controls {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border-top: 1px solid rgba(255, 77, 77, 0.4);
-    padding-top: 2px;
-    margin-top: 2px;
-}
-
-.font-controls button {
-    width: 36px;
-    height: 26px;
+.floating-controls > button {
     background: none;
     border: none;
-    color: #ff4d4d;
-    width: 33px;
-    font-size: 11px;
+    border-radius: 14px;
+    width: 36px;
+    height: 30px;
+    font-size: 13px;
     font-weight: bold;
+    color: #ff4d4d;
     cursor: pointer;
-    line-height: 1;
-    transition: 0.15s;
-    border-radius: 10px;
+    transition: 0.2s;
 }
 
-.font-controls button:hover {
-    background: rgba(255, 77, 77, 0.2);
-}
-
-.font-controls button.active {
+.floating-controls > button:hover {
     background: #ff4d4d;
     color: white;
 }
 
-body.light .content-wrapper {
+body.light .floating-controls {
     background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-color: #cc0000;
 }
 
-body.light .font-controls {
-    border-top-color: rgba(204, 0, 0, 0.4);
-}
-
-body.light .font-controls button {
+body.light .floating-controls > button {
     color: #cc0000;
 }
 
-body.light .font-controls button:hover {
-    background: rgba(204, 0, 0, 0.12);
-}
-
-body.light .font-controls button.active {
+body.light .floating-controls > button:hover {
     background: #cc0000;
     color: white;
 }
 
-.about-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: rgba(255, 77, 77, 0.3);
+.back-btn {
+    display: inline-block;
     border: 2px solid #ff4d4d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-header);
-    font-size: 28px;
     color: #ff4d4d;
-    flex-shrink: 0;
-}
-
-/* ── About tab layout ── */
-.about-wrapper {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 15px;
+    transition: 0.2s;
+    text-decoration: none;
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-radius: 10px;
-    padding: 20px;
-    min-width: 0;
 }
 
-.about-photo-block {
-    flex-shrink: 0;
-    width: 200px;
+.back-btn:hover {
+    background: #ff4d4d;
+    color: white;
+    text-decoration: none;
 }
 
-.about-photo {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    aspect-ratio: 3/4;
-    display: block;
-    border: 2px solid rgba(255, 77, 77, 0.4);
-}
-
-
-#content-about {
-    font-size: var(--font-size-base);
-    line-height: 1.6;
-    word-break: break-word;
-}
-
-@media (max-width: 600px) {
-    .about-wrapper {
-        flex-direction: column;
-    }
-    .about-photo-block {
-        width: 100%;
-        max-width: 260px;
-        margin: 0 auto;
-    }
-}
-
-body.light .about-wrapper {
+body.light .back-btn {
+    color: #cc0000;
+    border-color: #cc0000;
     background: rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-body.light .about-photo {
-    border-color: rgba(204, 0, 0, 0.35);
-}
-
-/* h2 всередині markdown-контенту — чистий текст без фону */
-.content-wrapper h2 {
-    background: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    padding: 4px 0;
-}
-
-body.light .content-wrapper h2 {
-    background: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-}
-
-/* вкладений content-wrapper (наприклад в about) — без свого фону */
-
-.about-wrapper h2 {
-    background: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    padding: 4px 0;
-}
-
-body.light .about-wrapper h2 {
-    background: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+body.light .back-btn:hover {
+    background: #cc0000;
+    color: white;
 }
