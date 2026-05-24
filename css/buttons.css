@@ -46,7 +46,7 @@ body.light .header-back-btn:hover {
     border-radius: 20px;
     overflow: hidden;
     padding: 4px;
-    width: 45px;
+    width: 41px;
     box-sizing: border-box;
 }
 
@@ -54,9 +54,9 @@ body.light .header-back-btn:hover {
     background: none;
     border: none;
     border-radius: 14px;
-    width: 37px;
-    height: 32px;
-    font-size: 14px;
+    width: 33px;
+    height: 30px;
+    font-size: 13px;
     font-weight: bold;
     color: #ff4d4d;
     cursor: pointer;
