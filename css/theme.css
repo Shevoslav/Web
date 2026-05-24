@@ -330,9 +330,3 @@ body.light .content-wrapper h2 {
 }
 
 /* вкладений content-wrapper (наприклад в about) — без свого фону */
-.about-wrapper .content-wrapper {
-    background: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    box-shadow: none !important;
-}
