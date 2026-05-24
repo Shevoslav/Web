@@ -271,12 +271,10 @@ body.light .font-controls button.active {
 .about-photo-block {
     flex-shrink: 0;
     width: 200px;
-    align-self: stretch;
 }
 
 .about-photo {
     width: 100%;
-    height: 100%;
     border-radius: 10px;
     object-fit: cover;
     object-position: top;
