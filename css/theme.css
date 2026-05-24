@@ -194,12 +194,11 @@ body.light a {
 }
 
 .font-controls button {
-    width: 36px;
-    height: 26px;
     background: none;
     border: none;
     color: #ff4d4d;
     width: 33px;
+    height: 24px;
     font-size: 11px;
     font-weight: bold;
     cursor: pointer;
@@ -272,13 +271,15 @@ body.light .font-controls button.active {
 .about-photo-block {
     flex-shrink: 0;
     width: 200px;
+    align-self: stretch;
 }
 
 .about-photo {
     width: 100%;
+    height: 100%;
     border-radius: 10px;
     object-fit: cover;
-    aspect-ratio: 3/4;
+    object-position: top;
     display: block;
     border: 2px solid rgba(255, 77, 77, 0.4);
 }
