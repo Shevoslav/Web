@@ -217,25 +217,7 @@ body.light .video-nav {
     }
 }
 @media (max-width: 600px) {
-    .library-slider {
-        flex-direction: column;
-    }
-    .library-track {
-        justify-content: center;
-    }
-    .library-slider > .library-nav {
-        display: none;
-    }
-    .library-controls-mobile {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        width: 100%;
-    }
-}
-
-@media (min-width: 601px) {
-    .library-controls-mobile {
-        display: none;
+    .library-card {
+        max-width: 200px;
     }
 }

@@ -26,18 +26,6 @@ function renderLibrary() {
   const track = document.createElement("div");
   track.className = "library-track";
 
-  // Кнопки для мобільного (знизу)
-  const mobileControls = document.createElement("div");
-  mobileControls.className = "library-controls-mobile";
-  const mobilePrev = document.createElement("button");
-  mobilePrev.className = "library-nav";
-  mobilePrev.textContent = "←";
-  const mobileNext = document.createElement("button");
-  mobileNext.className = "library-nav";
-  mobileNext.textContent = "→";
-  mobileControls.appendChild(mobilePrev);
-  mobileControls.appendChild(mobileNext);
-
   function render() {
     track.innerHTML = "";
     const visible = getVisible();
@@ -57,18 +45,12 @@ function renderLibrary() {
     }
   }
 
-  const prev = () => { current = (current - 1 + total) % total; render(); };
-  const next = () => { current = (current + 1) % total; render(); };
-
-  btnPrev.onclick = prev;
-  btnNext.onclick = next;
-  mobilePrev.onclick = prev;
-  mobileNext.onclick = next;
+  btnPrev.onclick = () => { current = (current - 1 + total) % total; render(); };
+  btnNext.onclick = () => { current = (current + 1) % total; render(); };
 
   grid.appendChild(btnPrev);
   grid.appendChild(track);
   grid.appendChild(btnNext);
-  grid.appendChild(mobileControls);
 
   render();
 
