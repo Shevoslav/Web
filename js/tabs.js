@@ -30,8 +30,8 @@ function toggleDropdown(e) {
     const tabsBar = document.querySelector(".tabs");
     const rect = tabsBar.getBoundingClientRect();
     dropdown.style.top = rect.bottom + "px";
-    dropdown.style.left = rect.left + "px";
-    dropdown.style.width = rect.width + "px";
+    dropdown.style.left = "0";
+    dropdown.style.width = "100%";
     const isOpen = dropdown.classList.toggle("open");
     hamburger.classList.toggle("open", isOpen);
 }
