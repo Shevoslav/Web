@@ -20,6 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const div = document.createElement("div");
     div.className = "video-container";
 
+    // Мобільні кнопки знизу
+    const mobileControls = document.createElement("div");
+    mobileControls.className = "video-controls-mobile";
+    const mobilePrev = document.createElement("button");
+    mobilePrev.className = "video-nav";
+    mobilePrev.textContent = "←";
+    const mobileNext = document.createElement("button");
+    mobileNext.className = "video-nav";
+    mobileNext.textContent = "→";
+    mobileControls.appendChild(mobilePrev);
+    mobileControls.appendChild(mobileNext);
+
     function render() {
         const video = videosData[current];
         div.innerHTML = `
@@ -41,8 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnPrev.onclick = prev;
     btnNext.onclick = next;
+    mobilePrev.onclick = prev;
+    mobileNext.onclick = next;
 
-    // Свайп
     div.addEventListener("touchstart", e => {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
@@ -58,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     wrapper.appendChild(btnPrev);
     wrapper.appendChild(div);
     wrapper.appendChild(btnNext);
+    wrapper.appendChild(mobileControls);
     container.appendChild(wrapper);
 
     render();

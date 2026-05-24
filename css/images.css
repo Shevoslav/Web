@@ -217,7 +217,24 @@ body.light .video-nav {
     }
 }
 @media (max-width: 600px) {
-    .library-card {
-        max-width: 200px;
+    .video-wrapper {
+        flex-direction: column;
+        padding: 8px;
+    }
+    .video-nav {
+        display: none;
+    }
+    .video-controls-mobile {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 601px) {
+    .video-controls-mobile {
+        display: none;
     }
 }
