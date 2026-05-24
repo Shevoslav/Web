@@ -271,6 +271,7 @@ body.light .font-controls button.active {
 .about-photo-block {
     flex-shrink: 0;
     width: 200px;
+    align-self: center;
 }
 
 .about-photo {
