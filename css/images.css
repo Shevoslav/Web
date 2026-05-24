@@ -216,3 +216,27 @@ body.light .video-nav {
         padding: 8px;
     }
 }
+
+@media (max-width: 600px) {
+    .library-slider {
+        flex-direction: column;
+    }
+    .library-track {
+        justify-content: center;
+    }
+    .library-nav {
+        align-self: auto;
+    }
+    .library-controls-mobile {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (min-width: 601px) {
+    .library-controls-mobile {
+        display: none;
+    }
+}
