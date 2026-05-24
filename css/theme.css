@@ -187,13 +187,10 @@ body.light a {
 .font-controls {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 20px;
-    border: 2px solid #ff4d4d;
-    padding: 5px 4px;
+    gap: 0;
+    border-top: 1px solid rgba(255, 77, 77, 0.4);
+    padding-top: 2px;
+    margin-top: 2px;
 }
 
 .font-controls button {
@@ -201,7 +198,7 @@ body.light a {
     border: none;
     color: #ff4d4d;
     width: 37px;
-    height: 22px;
+    height: 26px;
     font-size: 11px;
     font-weight: bold;
     cursor: pointer;
@@ -227,8 +224,7 @@ body.light .content-wrapper {
 }
 
 body.light .font-controls {
-    background: rgba(255, 255, 255, 0.55);
-    border-color: #cc0000;
+    border-top-color: rgba(204, 0, 0, 0.4);
 }
 
 body.light .font-controls button {
